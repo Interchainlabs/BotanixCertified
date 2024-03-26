@@ -1,0 +1,22 @@
+.primary:hover {
+  * {
+    @apply fill-white stroke-white;
+  }
+}
+
+.secondary {
+  * {
+    @apply fill-white stroke-[#475569];
+  }
+}
+
+.large,
+.medium {
+  .icon {
+    @apply h-6 w-6;
+  }
+}
+
+.icon {
+  @apply flex items-center justify-center;
+}

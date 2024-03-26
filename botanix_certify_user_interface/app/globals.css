@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Date picker style override */
+
+.react-datepicker-wrapper {
+  @apply w-full;
+}
+
+.react-datepicker {
+  @apply !z-10 !border-gray-500 !bg-black-20 !font-[inherit] !shadow-lg;
+}
+
+.react-datepicker * {
+  @apply !text-[14px];
+}
+
+.react-datepicker__header {
+  @apply !bg-gray-100;
+}
+
+.react-datepicker__day {
+  @apply !font-medium ;
+}
+
+.react-datepicker__header--custom {
+  @apply !border-gray-500;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  @apply !bg-primary-main !font-semi-bold !text-white;
+}
