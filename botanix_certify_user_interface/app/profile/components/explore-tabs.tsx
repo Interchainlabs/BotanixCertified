@@ -18,9 +18,10 @@ const ExploreTabs = () => {
   const {connector, isConnected} = useAccount();
   //
   const loadBlockchainData = () =>{
-    if (isConnected) {
-      addSubmission(connector, 'Dummy Person', '12-09-18', '12-09-18')
-    }
+    // TODO work on this
+    // if (isConnected) {
+    //   addSubmission(connector, 'Dummy Person', '12-09-18', '12-09-18')
+    // }
   }
 
   // Users Layou tab items
