@@ -13,8 +13,7 @@ const getContractInstance = (connector: Record<string, any>) => {
 export const loadSubmissions = async (connector: Record<string, any>) => {
   try {
     const contract = getContractInstance(connector);
-    const submissionOnchain = await contract.methods.royalties().call();
-    console.log(submissionOnchain);
+    const submissionOnchain = await contract.methods;
     return submissionOnchain;
   } catch (error) {
     console.error('Error loading user submissions:', error);
@@ -24,11 +23,14 @@ export const loadSubmissions = async (connector: Record<string, any>) => {
 
 
 // Load user submissions
-export const loadUserSubmissions = async (connector: Record<string, any>) => {
+export const loadUserSubmissions = async (connector: Record<string, any>, address: string) => {
   try {
     const contract = getContractInstance(connector);
-    const submissions = await contract.methods.returnRoyalties().call();
+    // console.log(connector)
+    const submissions = await contract.methods.mint(address).send({from: address}) //returnRoyalties().call();
+    // const tx = await myNFTContract.methods.mint(toAddress).send({ from: fromAddress });
     console.log(submissions);
+
     return submissions;
   } catch (error) {
     console.error('Error loading user submissions:', error);
@@ -36,8 +38,9 @@ export const loadUserSubmissions = async (connector: Record<string, any>) => {
   }
 };
 
+
 // Add a submission
-export const addSubmission =  async(connector: Record<string, any>, fingerPrint: TimeRanges, contentCreator: String, contentType: String, publicationDate: Date) => {
+export const addSubmission =  async(connector: Record<string, any>, fingerPrint: String, contentCreator: String, contentType: String, publicationDate: Date) => {
   try {
     const contract = getContractInstance(connector);
     const submission = await contract.methods.addRoyalty().call();

@@ -11,7 +11,6 @@ import { useRouter } from 'next/navigation';
 const SignInForm = () => {
   const login = async () => {
     await signIn('google', { callbackUrl: '/auth/connect-wallet' });
-    // router.replace('auth/connect-wallet');
   };
 
   return (

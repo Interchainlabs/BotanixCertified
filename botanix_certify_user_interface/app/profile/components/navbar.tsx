@@ -7,11 +7,12 @@ import Image from 'next/image';
 
 import profileImage from '@/public/images/profile-image.png';
 import { useSession } from 'next-auth/react';
+import { trimString } from '@/app/utils';
 
 export const ProfileNavbar = () => {
   const { data } = useSession();
   const userImage = data?.user.image || profileImage;
-  const walletAddress = data?.user.wallet_address;
+  const walletAddress = data?.user.wallet_address || "";
 
   return (
     <nav className="fixed left-0 top-0 z-10 flex h-[85px] w-full items-center justify-between border-b border-[#313131] bg-black-dark px-[3.75rem] text-white">
@@ -30,7 +31,7 @@ export const ProfileNavbar = () => {
 
       <div className="relative flex items-center">
         <span className="h-[42px] rounded-[1.5rem] border border-[#3C3A3A] py-2 pl-3 pr-14 text-body-bold ">
-          0xb794f5ea...
+          {trimString(String(walletAddress), 9)}
         </span>
 
         <Image

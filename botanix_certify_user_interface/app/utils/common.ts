@@ -93,3 +93,19 @@ export function calPaginationRangeWithDots(c: number, m: number) {
 
   return rangeWithDots;
 }
+
+export function trimString(inputString: string, length: number): string {
+  /**
+   * Trim the length of a string and represent the remaining part with ellipsis (...).
+   *
+   * @param inputString The input string to be trimmed.
+   * @param length The desired length of the resulting string (excluding the ellipsis).
+   * @returns The trimmed string.
+   */
+  if (inputString.length <= length) {
+    return inputString;
+  } else {
+    return inputString.slice(0, length) + "...";
+  }
+}
+

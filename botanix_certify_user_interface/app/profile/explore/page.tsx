@@ -5,9 +5,11 @@ import React from 'react'
 import { Button } from '@/ui'
 import { ExploreTabs } from '../components'
 import { useRouter } from 'next/navigation'
+import { useSession } from "next-auth/react";
 
 const UserProfilePage = () => {
   const router = useRouter()
+  const { data: session } = useSession()
 
   return (
     <section className="flex flex-col w-full text-white">
