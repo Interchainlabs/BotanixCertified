@@ -1050,9 +1050,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/BotanixCertify.sol": "BotanixCertify"
+			"botanix_certify_contracts/contracts/BotanixCertify.sol": "BotanixCertify"
 		},
-		"evmVersion": "london",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -1224,7 +1224,7 @@
 				"dweb:/ipfs/QmVBEei6aTnvYNZp2CHYVNKyZS4q1KkjANfY39WVXZXVoT"
 			]
 		},
-		"contracts/BotanixCertify.sol": {
+		"botanix_certify_contracts/contracts/BotanixCertify.sol": {
 			"keccak256": "0xb61e1fd227d8640cf6514d7b0caafba458809af08cf2c218d6bb9d415ec3197a",
 			"license": "MIT",
 			"urls": [
