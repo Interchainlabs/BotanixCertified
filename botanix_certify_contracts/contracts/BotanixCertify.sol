@@ -52,7 +52,7 @@ contract BotanixCertify is
     }
 
     function certify(string memory IpfsHash) public payable {
-        require(msg.value >= 0.01 ether, "Not enough balance");
+        require(msg.value >= 0.00055 ether, "Not enough balance");
         require(hashes[IpfsHash] != 1, "Certification already exist chain");
         hashes[IpfsHash] = 1;
 
